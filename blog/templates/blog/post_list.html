@@ -7,18 +7,12 @@
             <h1><a href="">Django Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Mussum Ipsum, cacilds vidis litro abertis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Aenean aliquam molestie leo, vitae iaculis nisl. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Mussum Ipsum, cacilds vidis litro abertis. Quem manda na minha terra sou euzis! A ordem dos tratores não altera o pão duris. Cevadis im ampola pa arma uma pindureta. Quem num gosta di mé, boa gentis num é.
-
-Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. In elementis mé pra quem é amistosis quis leo. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Aenean aliquam molestie leo, vitae iaculis nisl.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{post.published_date}}</p>
+                <h2><a href="">{{post.title}}</a></h2>
+                <p>{{post.text|linebreaksbr}}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
